@@ -1,0 +1,15 @@
+if plot
+    P = zeros(n,2);
+    for k=1:n
+        x = (xr-xl)*rand + xl;
+        y = (yt-yb)*rand + yb;
+        if y <= f(x) 
+            count = count+1;
+            P(k,:) = [x,y];
+        end
+    end
+    
+    t = xl:0.05:xr;
+    yt = f(t);
+    plot(P(:,1),P(:,2),'.',t,yt,'r','LineWidth',2)
+  
